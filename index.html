@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Predikat Umur</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .container {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+    color: #333333;
+  }
+  
+  input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  #hasil {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333333;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Masukkan Umur Anda:</h2>
+  
+  <input type="number" id="umur" placeholder="Masukkan umur dalam tahun">
+  <button onclick="cekUmur()">Cek Predikat Umur</button>
+  
+  <p id="hasil"></p>
+</div>
+
+<script>
+function cekUmur() {
+  var umur = document.getElementById('umur').value;
+  var hasil = document.getElementById('hasil');
+  
+  if (umur === '') {
+    hasil.textContent = 'Masukkan umur Anda terlebih dahulu.';
+  } else {
+    umur = parseInt(umur);
+    if (umur >= 0 && umur <= 12) {
+      hasil.textContent = 'Predikat Umur Anda: Anak';
+    } else if (umur >= 13 && umur <= 18) {
+      hasil.textContent = 'Predikat Umur Anda: Remaja';
+    } else if (umur >= 19 && umur <= 59) {
+      hasil.textContent = 'Predikat Umur Anda: Dewasa';
+    } else if (umur >= 60) {
+      hasil.textContent = 'Predikat Umur Anda: Lansia';
+    } else {
+      hasil.textContent = 'Umur yang Anda masukkan tidak valid.';
+    }
+  }
+}
+</script>
+
+</body>
+<footer>
+    copyright fikri
+</footer>
+</html>
